@@ -1,9 +1,14 @@
-import Message from "./Message"
-
+import Button from './components/Button';
+import Alert from './components/Alert';
+import ListGroup from './components/ListGroup';
+import Like from './components/Like';
 
 function App() {
-  return <div><Message /></div>
+  return (
+    <>
+      <Like onClick={() => console.log('like')}></Like>
+    </>
+  );
 }
 
-
-export default App
+export default App;
