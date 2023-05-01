@@ -1,25 +1,4 @@
 import { useState } from 'react';
-import styled from 'styled-components';
-import { css } from 'styled-components';
-import { BsFillBoomboxFill } from 'react-icons/bs';
-
-const List = styled.ul`
-  margin-top: 10px;
-`;
-
-interface ListItemProps {
-  active: boolean;
-}
-
-const ListItem = styled.li<ListItemProps>`
-  padding-left: 5px;
-  ${props =>
-    props.active &&
-    css`
-      padding: 10px;
-      background-color: red !important;
-    `};
-`;
 
 interface Props {
   items: string[];
@@ -30,8 +9,6 @@ interface Props {
 function ListGroup({ items, heading, onSelectItem }: Props) {
   const [selectedId, setSelectedId] = useState(0);
 
-  heading = '';
-
   const SelectItem = (itemId: number) => {
     setSelectedId(itemId);
     if (onSelectItem) onSelectItem(itemId);
@@ -39,25 +16,23 @@ function ListGroup({ items, heading, onSelectItem }: Props) {
 
   return (
     <>
-      {heading && <h1>{heading}</h1>}
+      {heading && <h2>{heading}</h2>}
 
       {items.length === 0 && <p>No items</p>}
 
-      <List className='list-group'>
+      <ul className='list-group'>
         {items.map((city, index) => (
-          <ListItem
-            active={index === selectedId}
+          <li
             className={
               'list-group-item' + (index === selectedId ? ' active' : '')
             }
             key={city}
             onClick={() => SelectItem(index)}
           >
-            <BsFillBoomboxFill />
             {city}
-          </ListItem>
+          </li>
         ))}
-      </List>
+      </ul>
     </>
   );
 }
