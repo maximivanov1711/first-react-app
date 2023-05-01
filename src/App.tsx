@@ -2,6 +2,7 @@ import ListGroup from './components/ListGroup';
 import Button from './components/Button';
 import Like from './components/Like';
 import Alert from './components/Alert';
+import Shop from './components/Shop';
 
 import styled from 'styled-components';
 import { useState } from 'react';
@@ -43,6 +44,9 @@ function App() {
       </ComponentDescription>
       {showAlert && <Alert onClose={() => setShowAlert(false)}>Alert!</Alert>}
       <Button onClick={() => setShowAlert(true)}>Show Alert</Button>
+
+      <ComponentTitle>Shop</ComponentTitle>
+      <Shop />
     </>
   );
 }
