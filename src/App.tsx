@@ -3,6 +3,7 @@ import Button from './components/Button';
 import Like from './components/Like';
 import Alert from './components/Alert';
 import Shop from './components/Shop';
+import ExpandableText from './components/ExpandableText';
 
 import styled from 'styled-components';
 import { useState } from 'react';
@@ -47,6 +48,14 @@ function App() {
 
       <ComponentTitle>Shop</ComponentTitle>
       <Shop />
+
+      <ComponentTitle>Expandable Text</ComponentTitle>
+      <ExpandableText maxChars={10}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ut
+        excepturi labore. Consectetur repellat ducimus culpa adipisci dolore
+        enim cumque hic reprehenderit eos quo assumenda corrupti, sequi odio?
+        Soluta, omnis!
+      </ExpandableText>
     </>
   );
 }

@@ -68,7 +68,9 @@ const Shop = () => {
         products={products}
         onClear={() => setProducts([])}
         onAddProduct={addOneProduct}
-        onRemoveLastProduct={() => removeProduct(products.length - 1)}
+        onRemoveLastProduct={() =>
+          removeProduct(products[products.length - 1]?.id)
+        }
         onChangeQuantity={changeQuantity}
       />
     </>
